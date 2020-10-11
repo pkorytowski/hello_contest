@@ -1,0 +1,7 @@
+.RegisterForm { 
+    grid-area: RegisterForm; 
+    background-color: brown;
+   }
+input{
+    height: 20px;
+}
