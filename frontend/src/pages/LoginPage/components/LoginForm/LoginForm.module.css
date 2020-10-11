@@ -1,7 +1,13 @@
-.LoginForm { 
+.LoginForm {
     grid-area: LoginForm; 
     background-color: brown;
    }
-input{
-    height: 20px;
-}
+/* form{
+    
+} */
+/* input {
+    width: 100%;
+  } */
+/* button{
+    width: 100%;
+} */
