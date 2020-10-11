@@ -1,0 +1,7 @@
+.LoginForm { 
+    grid-area: LoginForm; 
+    background-color: brown;
+   }
+input{
+    height: 20px;
+}

@@ -1,14 +1,23 @@
 import React from 'react';
 import './App.css';
-import {Header, PostContainer, Footer, Menu, UserStuff} from 'components'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {Header, PostContainer, Footer, Menu, UserStuff, Page} from 'components'
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <PostContainer/>
-      <Footer/>
-      <Menu/>
+      <Router>
+      {/* <Header/>
       <UserStuff/>
+      <PostContainer/>
+      <Menu/> */}
+      <Switch>
+          <Route path="*"> 
+              <Page />
+          </Route>
+        </Switch>
+      {/* <Footer/> */}
+      </Router>
+      
     </div>
   );
 }
