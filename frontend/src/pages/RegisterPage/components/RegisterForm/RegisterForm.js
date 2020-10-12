@@ -23,7 +23,7 @@ const RegisterForm = () => {
             method: 'POST',
             credentials: 'omit',
             headers: {'Content-Type': 'application/json'},
-            body: {name: "login", password: "password"}
+            body: JSON.stringify(data)
         });
         //console.log(response);
     }

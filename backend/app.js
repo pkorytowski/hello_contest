@@ -46,9 +46,10 @@ app.listen(PORT, () => {
     
 })
 
-app.get('/register', (req, res) => {
-  var msg =  req.body;
-  console.log('msg');
+app.post('/register', (req, res) => {
+  
+  
+  console.log(req);
 
- //res.json(req);
+ 
 })
