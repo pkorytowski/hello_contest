@@ -4,10 +4,10 @@ import {Link} from "react-router-dom";
 const UserStuff = () => {
     return (
 
-       <a className={styles.UserStuff}>
+       <div className={styles.UserStuff}>
             <Link to="/login">Login</Link><br/>
             <Link to="/registration">Create account</Link>    
-        </a>
+        </div>
 
     )
 }

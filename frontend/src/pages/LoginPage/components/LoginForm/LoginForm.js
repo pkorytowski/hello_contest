@@ -1,26 +1,23 @@
 import React, {useState} from 'react';
 import styles from './LoginForm.module.css';
-
+import { useForm } from "react-hook-form";
+import {Redirect} from "react-router-dom";
 const LoginForm = () => {
-    const [login, setLogin] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleLogin = e => {
-        e.preventDefault();
-        console.log({login, password})
-        if (!login || !password)
-            return;
-        setLogin('')
-        setPassword('')
-        
+    const { register, handleSubmit} = useForm();
+    const [isLogin, setLoggin] = useState(false)
+    const handleLogin = data => {
+        console.log(data)
+        setLoggin(true)       
     }
     return (
-        <form onSubmit={handleLogin} className={styles.LoginForm}>
-        <label><input type="text" value={login} onChange={e => setLogin(e.target.value)}/></label>
-        <label><input type="date" value={password} onChange={e => setPassword(e.target.value)}/></label>
-        <button type="submit">add</button>
-    </form>
-
+    <>
+        <form onSubmit={handleSubmit(handleLogin)} className={styles.LoginForm}>
+            <label><input ref={register} name="user_name" type="text" /></label>
+            <label><input ref={register} name="password" type="text" /></label>
+            <button type="submit" >add</button>      
+        </form>
+        { isLogin ? <Redirect to="/" /> : null  }
+    </> 
     )
 }
 export default LoginForm;
