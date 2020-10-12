@@ -5,8 +5,9 @@ import {Redirect} from "react-router-dom";
 const RegisterForm = () => {
     const { register, handleSubmit} = useForm();
     const [isRegister, setRegister] = useState(false)
-    const handleRegister= data => {
-        console.log(data)   
+    const handleRegister= (data, e) => {
+        console.log(data)
+        e.target.reset()   
         setRegister(true)          
     }
     return (

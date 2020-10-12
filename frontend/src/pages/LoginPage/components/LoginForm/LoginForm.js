@@ -5,9 +5,11 @@ import {Redirect} from "react-router-dom";
 const LoginForm = () => {
     const { register, handleSubmit} = useForm();
     const [isLogin, setLoggin] = useState(false)
-    const handleLogin = data => {
+    const handleLogin = (data, e) => {
         console.log(data)
-        setLoggin(true)       
+        setLoggin(true)
+        e.target.reset();
+   
     }
     return (
     <>

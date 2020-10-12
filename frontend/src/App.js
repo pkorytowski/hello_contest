@@ -6,16 +6,11 @@ function App() {
   return (
     <div className="App">
       <Router>
-      {/* <Header/>
-      <UserStuff/>
-      <PostContainer/>
-      <Menu/> */}
       <Switch>
           <Route path="*"> 
               <Page />
           </Route>
         </Switch>
-      {/* <Footer/> */}
       </Router>
       
     </div>
