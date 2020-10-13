@@ -5,12 +5,12 @@ import { HomePage,LoginPage, RegisterPage } from '../../pages';
 
 
 
-const Page = () => {
+const Page = ({ setLogged, isLogged }) => {
   return(
       <Switch>
-        <Route path='/' exact component={HomePage}/>
-        <Route path='/login' exact component={LoginPage}/> 
-        <Route path='/registration' exact component={RegisterPage}/> 
+        <Route path='/' exact component={() => <HomePage isLogged={isLogged} /> }/>
+        <Route path='/login' exact component={() => <LoginPage setLogged={setLogged}/>}/> 
+        <Route path='/registration' exact component={() => <RegisterPage/>}/> 
       </Switch>
   );
 }
