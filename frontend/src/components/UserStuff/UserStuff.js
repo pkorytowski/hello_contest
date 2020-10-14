@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from './UserStuff.module.css';
 import {Link} from "react-router-dom";
-const UserStuff = ({isLogged}) => {
-    console.log({isLogged})
+const UserStuff = ({isLogged, setLogged}) => {
+    const logout = () =>{
+        // add connection with database
+        setLogged(false)
+    }
     let display
     if (isLogged=== false){
         display = <><Link to="/login">Login</Link><br/>
@@ -11,7 +14,7 @@ const UserStuff = ({isLogged}) => {
     }
     else{
         display = <><Link to="/account">account</Link><br/>
-        <Link to="/logout">logout</Link>
+        <p onClick = {logout}>logout</p>
         </>
     }
     return (
