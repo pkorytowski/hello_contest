@@ -11,13 +11,14 @@ const RegisterForm = () => {
         setRegister(true)          
     }
     return (
+
         <form onSubmit={handleSubmit(handleRegister)} className={styles.RegisterForm}>
-            <label><input ref={register} name="name" type="text" /></label>
-            <label><input ref={register} name="surname" type="text" /></label>
-            <label><input ref={register} name="born_date"  type="date" /></label>
-            <label><input ref={register} name="mail"  type="text" /></label>
-            <label><input ref={register} name="user_name" type="text" /></label>
-            <label><input ref={register} name="password" type="text" /></label>
+            <label>Name: <input ref={register} name="name" type="text" /></label><br/>
+            <label>Surname: <input ref={register} name="surname" type="text" /></label><br/>
+            <label>Your born date: <input ref={register} name="born_date"  type="date" /></label><br/>
+            <label>Email: <input ref={register} name="email"  type="text" /></label><br/>
+            <label>Nickname: <input ref={register} name="user_name" type="text" /></label><br/>
+            <label>Password: <input ref={register} name="password" type="text" /></label><br/>
         <button type="submit">add</button>
         { isRegister ? <Redirect to="/login" /> : null  }
     </form>
