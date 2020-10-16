@@ -2,8 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 //const bodyParser = require('body-parser')
+const routing = require('./routes');
 
-mongoose.connect("mongodb+srv://pkorytowski:abc@cluster0.faihf.azure.mongodb.net/hello_contest_DB?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology:true, useCreateIndex: true, useFindAndModify: false},(err) => {
+
+mongoose.connect("mongodb+srv://pkorytowski:projekcik@cluster0.faihf.azure.mongodb.net/hello_contest_DB?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology:true, useCreateIndex: true, useFindAndModify: false},(err) => {
   if (err) {
     console.error('Cannot connect to the database...')
     console.error(err);
@@ -18,12 +20,13 @@ db.on('error', console.error.bind(console, 'connection error:'));
 //db.once('open', function() {
 //  console.log("dziala!");
 //});
+
 var userSchema = mongoose.Schema({
   Name: String,
   Password: String
 });
 
-var User = mongoose.model('User', userSchema, 'users');
+//var User = mongoose.model('User', userSchema, 'users');
 /*
 var User1 = new User({Name: 'abc', Password: 'cde'});
 User1.save(function (err, user){
@@ -38,6 +41,12 @@ const app = express();
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json({extended: true}));
+
+//router
+app.use('/register', routing.registerRoute);
+app.use('/login', routing.loginRoute);
+
+
 const PORT = process.env.PORT || 4000;
 
 
@@ -46,10 +55,4 @@ app.listen(PORT, () => {
     
 })
 
-app.post('/register', (req, res) => {
-  
-  
-  console.log(req);
 
- 
-})
