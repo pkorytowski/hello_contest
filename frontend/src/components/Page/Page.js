@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 
-import { HomePage,LoginPage, RegisterPage } from '../../pages';
+import { HomePage,LoginPage, RegisterPage, AccountPage } from '../../pages';
 
 
 
@@ -9,6 +9,7 @@ const Page = ({ setLogged, isLogged }) => {
   return(
       <Switch>
         <Route path='/' exact component={() => <HomePage isLogged={isLogged} setLogged={setLogged}/> }/>
+        <Route path='/account' exact component={() => <AccountPage isLogged={isLogged} setLogged={setLogged}/> }/>
         <Route path='/login' exact component={() => <LoginPage setLogged={setLogged}/>}/> 
         <Route path='/registration' exact component={() => <RegisterPage/>}/> 
       </Switch>
