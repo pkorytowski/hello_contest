@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { User } = require('../models/user');
 const bcrypt = require('bcrypt');
-
+const jwt = require('jsonwebtoken');
 
 exports.login = async (req, res) => {
     
@@ -15,7 +15,9 @@ exports.login = async (req, res) => {
         return res.status(400).send('Incorrect password.');
     }
 
-    res.send(true);
+    const PrivateKey = process.env.PRIVATE_KEY
+    const token = jwt.sign({ _id: user._id }, PrivateKey, {expiresIn: '1800s'});
+    res.send(token);
 
 }
 

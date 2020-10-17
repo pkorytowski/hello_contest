@@ -1,11 +1,15 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-//const bodyParser = require('body-parser')
+const dotenv = require('dotenv');
 const routing = require('./routes');
 
 
-mongoose.connect("mongodb+srv://pkorytowski:projekcik@cluster0.faihf.azure.mongodb.net/hello_contest_DB?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology:true, useCreateIndex: true, useFindAndModify: false},(err) => {
+dotenv.config();
+
+const uri = process.env.DB_URL;
+
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology:true, useCreateIndex: true, useFindAndModify: false},(err) => {
   if (err) {
     console.error('Cannot connect to the database...')
     console.error(err);
