@@ -17,7 +17,8 @@ exports.login = async (req, res) => {
 
     const PrivateKey = process.env.PRIVATE_KEY
     const token = jwt.sign({ _id: user._id }, PrivateKey, {expiresIn: '1800s'});
-    res.send(token);
+    res.setHeader('Set-Cookie', `token=${token}; HttpOnly`);
+    res.status(200).send(true);
 
 }
 
