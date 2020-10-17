@@ -1,21 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import {Header, PostContainer, Footer, Menu, UserStuff, Page} from 'components'
+import {Page} from 'components'
 function App() {
+  const [isLogged, setLogged] = useState(false)
   return (
     <div className="App">
       <Router>
-      {/* <Header/>
-      <UserStuff/>
-      <PostContainer/>
-      <Menu/> */}
       <Switch>
           <Route path="*"> 
-              <Page />
+              <Page setLogged={setLogged} isLogged={isLogged} />
           </Route>
         </Switch>
-      {/* <Footer/> */}
       </Router>
       
     </div>
