@@ -1,7 +1,6 @@
 .RegisterForm {
     width: 40%;
     margin-top: 20px;
-    grid-area: RegisterForm; 
     /* background-color: brown; */
     display: block;
     /* font-family: 'Muli-Regular'; */
