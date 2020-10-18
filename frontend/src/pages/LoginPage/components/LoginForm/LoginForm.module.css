@@ -1,13 +1,62 @@
 .LoginForm {
-    grid-area: LoginForm; 
-    background-color: brown;
-   }
-/* form{
-    
+  width: 30%;
+  margin-top: 140px;
+  /* background-color: brown; */
+  display: block;
+  /* font-family: 'Muli-Regular'; */
+  align-self: center;
+ }
+/* input{
+  height: 45px;
+  width: 100%;
+  padding:10px;
+  margin:40px 0;
+  border-radius:100px;
+  font-size: 22px;
+  background: rgb(189, 189, 190);
+}
+input:focus{
+  outline: none;
+  border: 3px solid #740103;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+transition: background-color 5000s;
+-webkit-text-fill-color: black !important;
 } */
-/* input {
-    width: 100%;
-  } */
-/* button{
-    width: 100%;
-} */
+.register{
+  height: 40px;
+  text-decoration: none;
+  border-radius:100px;
+  width: 152px;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+  background: #740103;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 13px;
+  border: #740103;
+
+}
+
+.register:focus{
+  outline: none;
+}
+.register:disabled{
+  background-color: #424042;
+}
+label{
+  font-size: 20px;
+}
+.rform {
+  height: 30px;
+  font-size: 22px;
+
+  text-align: center;
+  margin: 10px 0;
+  color: white;
+  letter-spacing: 2px;
+}

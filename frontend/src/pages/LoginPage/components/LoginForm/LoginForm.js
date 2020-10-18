@@ -18,9 +18,12 @@ const LoginForm = ({setLogged}) => {
     return (
     <>
         <form onSubmit={handleSubmit(handleLogin)} className={styles.LoginForm}>
-            <label><input ref={register} name="email" type="text" /></label>
-            <label><input ref={register} name="password" type="text" /></label>
-            <button type="submit" >add</button>      
+        <h3 className={styles.rform}>Login Form</h3>
+            <label>Login</label>
+            <input ref={register} name="user_name" type="text" />
+            <label>Password</label>
+            <input ref={register} name="password" type="text" />
+            <button type="submit" className={styles.register}>add</button>      
         </form>
         { isLogin ? <Redirect to="/" /> : null  }
     </> 
