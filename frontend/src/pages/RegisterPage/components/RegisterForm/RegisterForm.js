@@ -5,6 +5,8 @@ import {Redirect, useHistory} from "react-router-dom";
 const RegisterForm = () => {
     const { register, handleSubmit, formState} = useForm();
     const [isRegister, setRegister] = useState(false)
+    const {dirtyFields} = formState
+    const { push } = useHistory()
     const handleRegister = async (data, e) => {
         const url = 'http://localhost:4000/register';
         const response = await fetch(url,{
@@ -14,11 +16,6 @@ const RegisterForm = () => {
             body: JSON.stringify(data)
         });
         console.log(response);
-    const {dirtyFields} = formState
-    const { push } = useHistory()
-    const handleRegister= (data, e) => {
-        
-        // console.log(Object.keys(dirtyFields).length)
         e.target.reset()   
         setRegister(true)          
     }
