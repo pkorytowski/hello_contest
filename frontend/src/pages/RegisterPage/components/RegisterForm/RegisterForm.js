@@ -5,11 +5,19 @@ import {Redirect} from "react-router-dom";
 const RegisterForm = () => {
     const { register, handleSubmit} = useForm();
     const [isRegister, setRegister] = useState(false)
-    const handleRegister= (data, e) => {
-        console.log(data)
+    const handleRegister = async (data, e) => {
+        const url = 'http://localhost:4000/register';
+        const response = await fetch(url,{
+            method: 'POST',
+            credentials: 'omit',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        });
+        console.log(response);
         e.target.reset()   
         setRegister(true)          
     }
+
     return (
 
         <form onSubmit={handleSubmit(handleRegister)} className={styles.RegisterForm}>
