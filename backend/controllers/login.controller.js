@@ -7,16 +7,16 @@ exports.login = async (req, res) => {
     
     let user = await User.findOne({email: req.body.email});
     if(!user){
-        return res.status(400).send('Incorrect email.');
+        return res.status(400).send('Incorrect email or password.');
     }
 
     const validPassword = await bcrypt.compare(req.body.password, user.password);
     if(!validPassword){
-        return res.status(400).send('Incorrect password.');
+        return res.status(400).send('Incorrect email or password.');
     }
 
     const PrivateKey = process.env.PRIVATE_KEY
-    const token = jwt.sign({ _id: user._id }, PrivateKey, {expiresIn: '1800s'});
+    const token = jwt.sign({ _id: user._id }, PrivateKey);
     res.setHeader('Set-Cookie', `token=${token}; HttpOnly`);
     res.status(200).send(true);
 
