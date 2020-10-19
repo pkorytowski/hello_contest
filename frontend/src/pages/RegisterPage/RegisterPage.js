@@ -1,11 +1,10 @@
 import React from 'react';
-import {Header, Footer} from 'components'
+import {Footer, Menu} from 'components'
 import{ RegisterForm} from './components'
 import styles from './RegisterPage.module.css';
 const RegisterPage = () => {
     return (
     <div className={styles.RegisterPage}>
-        <Header/>
        <RegisterForm/>
        <Footer/>
     </div>

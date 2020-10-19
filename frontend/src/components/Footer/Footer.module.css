@@ -1,4 +1,8 @@
-.Footer { 
+.Footer {
+    padding: 5px ;
+    text-align: center;
     grid-area: Footer;
-    background-color: fuchsia;
+    /* background-color: darkred; */
+    color: #878587;
+    height: 35px;
    }
