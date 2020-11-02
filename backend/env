@@ -1,0 +1,2 @@
+PRIVATE_KEY="43086b1310b77898ff6a32cbb4d566fa54b111d862abc019e2dea8ed78020e0465997024dc7b0484c4434d138e4080e80f8fe8665b567a95e0621005bdad8db3"
+DB_URL="mongodb+srv://pkorytowski:projekcik@cluster0.faihf.azure.mongodb.net/hello_contest_DB?retryWrites=true&w=majority"
